@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "main"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "main"
+    spec:
+      containers:
+        - name: "main"
+          image: "maindockedrregistry.azurecr.io/main"
+          ports:
+          - containerPort: 8050
