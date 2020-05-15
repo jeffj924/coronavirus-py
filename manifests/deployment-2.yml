@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "kcluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "kcluster"
+    spec:
+      containers:
+        - name: "kcluster"
+          image: "coviddashacr.azurecr.io/kcluster"
+          ports:
+          - containerPort: 8050
